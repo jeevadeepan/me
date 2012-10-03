@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+}
+
+div.pages{
+    border: 1px solid black;
+	display: none;
+	font-size: 2em;
+	text-align: center;
+	height:99%
+}
+
+div.pages.current{
+    display: block;
+}
