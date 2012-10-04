@@ -62,8 +62,8 @@
      //Rotate Functions.
      var rotateUp = function(){
 	     rotateUpAngle+=90;
-	     cuboidDiv.css("-webkit-transform","translateZ(" + (-translateDistance) + "px) rotateX(-" + (rotateUpAngle%360) + "deg)")
-		                                .css("-moz-transform", "translateZ(" + (-translateDistance) + "px) rotateX(-" + (rotateUpAngle%360) + "deg)");
+	     cuboidDiv.css("-webkit-transform","translateZ(" + (-translateDistance) + "px) rotateX(" + (rotateUpAngle%360) + "deg)")
+		                                .css("-moz-transform", "translateZ(" + (-translateDistance) + "px) rotateX(" + (rotateUpAngle%360) + "deg)");
 	 };
 
      var rotateDown = function(){
