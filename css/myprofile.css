@@ -30,6 +30,8 @@ div.pages{
 	height:100%;
 	width: 100%;
 	opacity: 0.5;
+    -moz-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 div#front{
