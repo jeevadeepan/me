@@ -16,8 +16,8 @@ div#current_page_container{
 	position: absolute;
     -webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
-	/*-webkit-transform: translateZ(-100px);
-	-moz-transform: translateZ(-100px);*/
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
 }
 
 div.pages{
