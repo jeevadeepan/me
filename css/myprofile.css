@@ -1,14 +1,49 @@
 html, body {
     height: 100%;
 	overflow: hidden;
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    background-color: #302E2C;
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+
+header h1 a {
+    text-decoration: none;
+    font-size: 3em;
+    border-bottom: 3px solid #FFFFFF;
+    margin-left: 1em;
+    color: inherit;
+}
+
+header nav {
+    overflow: hidden;
+    margin-top: 0.8em;
+    font-size: 2em;
+}
+
+header nav ul li {
+    float: left;
+    padding: 10px 20px;
+}
+
+header nav ul li:hover {
+    background-color: #FFFFFF;
+    color: #302E2C;
+    cursor: pointer;
 }
 
 section.body_container{
-    height: 100%;
+    clear: both;
+    height: 60%;
 	width:100%;
 	position: relative;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
+    font-size: 1.5em;
+    line-height: 1.4em;
 }
 
 div#current_page_container{
@@ -24,48 +59,70 @@ div#current_page_container{
 div.pages{
     /*border: 1px solid black;*/
 	display: block;
-	font-size: 2em;
 	text-align: center;
 	position: absolute;
-	height:100%;
+    height: 100%;
 	width: 100%;
 	opacity: 0.5;
     -moz-backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
+    border: 3px solid black;
 }
 
-div#front{
-    background-color: cyan;
+div.front{
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
 }
 
-div#left{
-    background-color: grey;
+div.front section {
+    width: 60%;
+    padding: 10px;
+    margin: 10% auto;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2em;
+    color: #000000;
+    line-height: 1.4em;
+}
+
+div.front aside {
+    border: 1px solid #302E2C;
+    border-radius: 50px;
+    float: left;
+    height: 100px;
+    margin: 12% 0 0 5.5em;
+    width: 100px;
+}
+
+div.left{
 	-webkit-transform: rotateY(-90deg);
 	-moz-transform: rotateY(-90deg);
 }
 
-div#right{
-    background-color: yellow;
+div.right{
 	-webkit-transform: rotateY(90deg);
 	-moz-transform: rotateY(90deg);
 }
 
-div#bottom{
-    background-color: blue;
+div.bottom{
 	-webkit-transform: rotateX(-90deg);
 	-moz-transform: rotateX(-90deg);
 }
 
-div#top{
-    background-color: brown;
+div.top{
 	-webkit-transform: rotateX(90deg);
 	-moz-transform: rotateX(90deg);
 }
 
-div#back{
-    background-color: green;
+div.back{
 	-webkit-transform: rotateX(180deg);
 	-moz-transform: rotateX(180deg);
+}
+footer {
+    background-color: #302E2C;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    padding-top: 15px;
 }

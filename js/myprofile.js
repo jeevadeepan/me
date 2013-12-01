@@ -18,29 +18,29 @@
 	 
 	 //Calculate positionleft of side divs and push them to their sides. 
 	 var positionLeft = (viewportWidth - viewportHeight)/2;
-	 $('div#left,div#right').css("left",positionLeft+"px"); 
+	 $('div.left,div.right').css("left",positionLeft+"px");
 	 
 	 //Push the cuboid back to resolve distortion and get a better view.
 	 cuboidDiv.css({"-webkit-transform":"translateZ(-" + translateDistance + "px)","-moz-transform":"translateZ(-" + translateDistance + "px)"});
 	 
 	 
 	 //Initiate cuboid setup - rotate and translate sides.
-	 $('div#front').css("-webkit-transform","rotateY(0deg) translateZ(" + translateDistance + "px)")
+	 $('div.front').css("-webkit-transform","rotateY(0deg) translateZ(" + translateDistance + "px)")
 		           .css("-moz-transform", "rotateY(0deg) translateZ(" + translateDistance + "px)");
 
-     $('div#left').css("-webkit-transform","rotateY(-90deg) translateZ(" + viewportWidth/2 + "px)")
+     $('div.left').css("-webkit-transform","rotateY(-90deg) translateZ(" + viewportWidth/2 + "px)")
 		           .css("-moz-transform", "rotateY(-90deg) translateZ(" + viewportWidth/2 + "px)");
 
-     $('div#right').css("-webkit-transform","rotateY(90deg) translateZ(" + viewportWidth/2 + "px)")
+     $('div.right').css("-webkit-transform","rotateY(90deg) translateZ(" + viewportWidth/2 + "px)")
 		           .css("-moz-transform", "rotateY(90deg) translateZ(" + viewportWidth/2 + "px)");
 
-     $('div#bottom').css("-webkit-transform","rotateX(-90deg) translateZ(" + translateDistance + "px)")
+     $('div.bottom').css("-webkit-transform","rotateX(-90deg) translateZ(" + translateDistance + "px)")
 		           .css("-moz-transform", "rotateX(-90deg) translateZ(" + translateDistance + "px)");
 
-     $('div#top').css("-webkit-transform","rotateX(90deg) translateZ(" + translateDistance + "px)")
+     $('div.top').css("-webkit-transform","rotateX(90deg) translateZ(" + translateDistance + "px)")
 		           .css("-moz-transform", "rotateX(90deg) translateZ(" + translateDistance + "px)");
 
-     $('div#back').css("-webkit-transform","rotateX(180deg) translateZ(" + translateDistance + "px)")
+     $('div.back').css("-webkit-transform","rotateX(180deg) translateZ(" + translateDistance + "px)")
 		           .css("-moz-transform", "rotateX(180deg) translateZ(" + translateDistance + "px)");
 
     				   
