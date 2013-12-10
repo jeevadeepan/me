@@ -12,23 +12,24 @@
     <link rel='stylesheet' href='css/myprofile.css'>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/myprofile.js"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </head>
 <body>
 <header>
     <h1>
-        <a href="jeevadeepan.me" title="Jeevadeepan">Jeevadeepan</a>
+        <a href="jeevadeepan.com" title="Jeevadeepan">Jeevadeepan</a>
     </h1>
     <nav>
-        <ul>
-            <li>About Me</li>
-            <li>My Skills</li>
-            <li>Projects</li>
-            <li>Contact Me</li>
+        <ul class="cf">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
         </ul>
     </nav>
 </header>
 <section class="body_container">
-    <div id="current_page_container">
+    <!-- About Page -->
         <div id="about" class="pages front">
             <aside id="profile_pic"></aside>
             <section>
@@ -36,12 +37,107 @@
                 in front end web technologies Javascript, HTML, CSS and jQuery. At present, I work for Pramati Technologies, Hyderabad."
             </section>
         </div>
-        <div id="skills" class="pages back"> BACK PAGE</div>
-        <div id="dummy" class="pages sides left"> LEFT PAGE</div>
-        <div id="dummy2" class="pages sides right"> RIGHT PAGE</div>
-        <div id="projects" class="pages top"> TOP PAGE</div>
-        <div id="contact" class="pages bottom"> BOTTOM PAGE</div>
-    </div>
+
+    <!-- Skills Page -->        
+        <div id="skills" class="pages back">
+            <dl>
+                <dt>Programming Languages</dt>
+                <dd>Javascript, Java</dd>
+
+                <dt>Javascript Libraries and Frameworks</dt>
+                <dd>jQuery, angularjs, backbonejs, nodejs, twitter bootstrap, jQuery UI, jQuery Mobile</dd>
+
+
+                <dt>Other Web Technoloiges</dt>
+                <dd>HTML, CSS</dd>
+
+                <dt>Version Control</dt>
+                <dd>git, TFS, svn</dd>
+
+                <dt>IDE</dt>
+                <dd>sublime text, Webstorm</dd>
+            </dl>
+            <section>
+                <h3>What I can do?</h3>
+                <ul>
+                    <li>Develop feature rich User Interface for Web applications using javascript, HTML, CSS and other related technologies</li>
+                    <li>Develop performance optimized applications with strong understanding of Object oriented javascript</li>
+                    <li>Develop Singe page applications using javascript MV* frameworks angularjs, backbonejs and emberjs</li>
+                    <li>Streamline client oriented (javascript) applications using 'workflow' tools yeoman, grunt and bower</li>
+                    <li>Write cleaner javascript that is 'jslint'ed</li>
+                    <li>Write cleaner, readable and reusable CSS using LESS/SASS</li>
+                    <li>Write semantic markup and reusable HTML using templates</li>
+                </ul>
+            </section>
+        </div>
+
+    <!-- Projects Page -->        
+        <div id="projects" class="pages top">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Description</th>
+                        <th>Technologies used</th>
+                        <th>Role</th>
+                        <th>Link to site</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Big Machines</td>
+                        <td>Bigmachine’s B2B ecommerce engine includes modules for online product catalogs, guided selling, product configuration, shopping cart, order management, reporting, interface personalization, web lead capture and ecommerce suite integration</td>
+                        <td>Core javascript, jQuery, jQueryUI, jQuery mobile, backbonejs, css, HTML</td>
+                        <td>Involved in developing mobile configurator pages and many other UI enhancements in different modules of B2B engine</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>Socialbyway</td>
+                        <td>Socialbyway is a javascript library that simplifies the implementation of
+multiple social platforms(like facebook, twitter, linkedIn, etc) in to a website</td>
+                        <td>Core javascript, jQuery, jQueryUI, css, HTML, REST</td>
+                        <td>Implemented picasa api for socialbyway library. Developed UI components for socialbyway site</td>
+                        <td><a href="www.socialbyway.com">www.socialbyway.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>AWB - Gallagher</td>
+                        <td>Develop UI components and functionality for Gallagher's BI tool 
+AWB(Analytic Work Bench)</td>
+                        <td>Core javascript, jQuery, jQueryUI, css, HTML</td>
+                        <td>Developed UI components for AWB's search functionality that allows customers 
+to search for claims</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>Matisse</td>
+                        <td>A white board application with real-time canvas sharing and chatting.
+Users can collaborate on the design ideas real time and create the UI for the applications which can be then published as an image. The product is built with HTML5 technologies which include canvas, web storage, transitions and transformations</td>
+                        <td>Core javascript, jQuery, jQueryUI, css3, html5, fabric.js, node.js
+</td>
+                        <td>User Interface Development</td>
+                        <td><a href="www.thematisse.org"></a>www.thematisse.org</td>
+                    </tr>
+                    <tr>
+                        <td>THUNDERCAT / NOCE UI</td>
+                        <td>The aim of the project is to design and develop UI components and functionality for the shop and ordering section of the E-commerce web portal www.centurylink.com</td>
+                        <td>XHTML, CSS, JavaScript, jQuery, Ajax, Velocity Module(VM)
+</td>
+                        <td>User Interface Developer for the Centurylink E-commerce portal</td>
+                        <td><a href="www.centurylink.com">www.centurylink.com</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <!-- Contact Page -->        
+        <div id="contact" class="pages bottom">
+            <ul>
+                <li>E-mail me : <a href="mailto:jeevacse89@gmail.com">jeevacse89@gmail.com</a></li>
+                <li>Checkout my LinkedIn profile : <a href="http://www.linkedin.com/pub/jeevadeepan-a/48/5ba/210">Here</a></li>
+                <li>Checkout my Git : <a href="https://github.com/jeevadeepan">https://github.com/jeevadeepan</a></li>
+                <li>Follow me on Twitter : <a href="https://twitter.com/jeevadeepan" class="twitter-follow-button" data-show-count="false" data-lang="en">@jeevadeepan</a></li>
+            </ul>
+        </div>
 </section>
 <footer>Copyright &copy; Jeevadeepan, 2013</footer>
 </body>
