@@ -98,24 +98,24 @@ header nav ul li a{
     overflow: auto;
 }
 
-#skills .tech-list {
+#tech-list {
     width: 30%;
     display: inline-block;
 }
 
-#skills .skill-list {
+#skill-section {
     width: 50%;
     display: inline-block;
     float: right;
 }
 
-.skill-list>h3 {
+#skill-section>h3 {
     font-size: 2rem;
     font-weight: bold;
 }
 
-.skill-list>ul {
-    list-style: none inside square;
+#skill-list {
+    list-style: inside square;
 }
 
 #skills ul span {
