@@ -9,8 +9,9 @@
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - parseInt(target.css('margin-top'), 10)
         }, 1000);
+        $(this).parent('li').addClass('active').siblings('li').removeClass('active');
         return false;
       }
     }

@@ -7,6 +7,10 @@ html, body {
     height: 100%;
 }
 
+body {
+    font-size: 1.5rem;
+}
+
 header {
     background-color: #302E2C;
     color: #FFFFFF;
@@ -37,12 +41,12 @@ header nav {
 header nav ul li {
     float: left;
     padding: 10px 20px;
+    cursor: pointer;
 }
 
-header nav ul li:hover {
+header nav ul li.active {
     background-color: #FFFFFF;
     color: #302E2C;
-    cursor: pointer;
 }
 
 header nav ul li a{
@@ -57,10 +61,12 @@ header nav ul li a{
 
 .pages{
     margin-top: 9rem;
+    padding: 0 4rem 0 4rem;
+    min-height: 500px;
 }
 
 .pages > * {
-    font-size: 2.1rem;
+    font-size: 1.5rem;
 }
 
 .front section {
@@ -73,6 +79,7 @@ header nav ul li a{
 }
 
 .front aside {
+    background: url("../images/photo.jpg") center/cover no-repeat;
     border: 1px solid #302E2C;
     border-radius: 50px;
     float: left;
@@ -87,11 +94,61 @@ header nav ul li a{
 }
 
 #skills {
+    overflow: auto;
+}
+
+#skills .tech-list {
+    width: 30%;
+    display: inline-block;
+}
+
+#skills .skill-list {
+    width: 50%;
+    display: inline-block;
+    float: right;
+}
+
+.skill-list>h3 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.skill-list>ul {
+    list-style: none inside square;
+}
+
+#skills ul span {
+    font-weight: bold;
+}
+
+#projects tr {
+    border-bottom: 1px dotted #CCCCCC;
+}
+
+#projects th {
+    font-weight: bold;
+}
+
+#projects tbody tr:last-child {
+    border: 0;
+}
     
+#projects tr td, #projects tr th {
+    padding: 5px;
+    border-right: 1px dotted #CCCCCC;
+}
+
+#projects tr td:last-child, #projects tr th:last-child {
+    border: 0;
 }
 
 #contact {
     margin-bottom: 45px;
+}
+
+#contact ul {
+    margin: 10rem auto 0;
+    width: 30%;
 }
 
 footer {
