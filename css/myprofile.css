@@ -34,7 +34,7 @@ header h1 a {
 
 header nav {
     position: absolute;
-    bottom: 0;
+    top: 6rem;
     font-size: 1.5rem;
 }
 
@@ -54,6 +54,10 @@ header nav ul li a{
     text-decoration: none;
 }
 
+.mobile-menu {
+    display: none;
+}
+
 .body_container{
     line-height: 2.4rem;
 }
@@ -61,7 +65,7 @@ header nav ul li a{
 
 .pages{
     margin-top: 9rem;
-    padding: 0 4rem 0 4rem;
+    padding: 0 1rem 0 1rem;
     min-height: 500px;
 }
 
@@ -126,6 +130,11 @@ header nav ul li a{
     font-weight: bold;
 }
 
+#projects {
+    width: 90%;
+    overflow: auto;
+}
+
 #projects tr {
     border-bottom: 1px dotted #CCCCCC;
 }
@@ -165,4 +174,84 @@ footer {
     width: 100%;
     height: 30px;
     padding-top: 15px;
+}
+
+/* Smaller screens */
+@media only screen 
+and (max-width : 480px) {
+/* Styles */
+
+    header {
+        height: auto;
+        padding: 0.5rem
+    }
+
+    header h1{
+        margin-bottom: 2rem;
+    }
+
+    header nav {
+        position: relative;
+        top: 0;
+    }
+
+    header nav ul li {
+        float: none;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    #nav_list {
+        display: none;
+    }
+
+    header nav ul li.active {
+        display: none;
+    }
+
+    #profile_pic {
+        margin: 0 auto;
+        float: none;
+    }
+
+    #contact ul {
+        width: 100%;
+        margin: 3rem 0;
+    }
+
+    #contact ul li {
+        margin: 1rem 0;
+    }
+
+    .menu-icon {
+        display: inline-block;
+        padding: 0 0.5rem;
+        position: absolute;
+        top: 0;
+        right: 0.2rem;
+    }
+
+    .menu-icon>span{
+        display: block;
+        height: 0.5rem;
+        width: 2.5rem;
+        margin: 0.5rem 0;
+        background-color: #302E2C;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .active-link {
+        background-color: #FFFFFF;
+        color: #302E2C;
+        font-size: 2.5rem;
+        text-align: center;
+        height: 3.5rem;
+        line-height: 3.5rem;
+    }
 }

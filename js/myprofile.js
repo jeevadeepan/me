@@ -19,6 +19,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // Add Link to window history, to preserve browser history upon back/forward navigation.
         window.history.pushState({}, "", targetLink.href);
 
+        // Set active link - mobile layout
+        var menuIcon = document.querySelector('.menu-icon');
+        if (menuIcon.offsetWidth > 0 && menuIcon.offsetHeight > 0) {
+            document.querySelector('.active-link').innerHTML = targetLink.innerHTML;
+            document.querySelector('#nav_list').style.display = 'none';
+        }
+
         // Top position to scroll to
         scrollTopTo = document.getElementById(targetLink.getAttribute('href').replace(/#/, '')).offsetTop;
 
@@ -27,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         // Handle scroll down
         if(scrollCounter < scrollTopTo) {
-            step = (scrollTopTo - scrollCounter)/200 ;
+            step = (scrollTopTo - scrollCounter)/20 ;
             scrollTimer = window.setInterval(function () {
                 scrollCounter += step;
                 window.scrollTo(0, scrollCounter);
@@ -37,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }    
             }, 1)
         } else { //Handle scroll up
-            step = (scrollCounter - scrollTopTo)/200 ;
+            step = (scrollCounter - scrollTopTo)/20 ;
             scrollTimer = window.setInterval(function () {
                 scrollCounter -= step;
                 window.scrollTo(0, scrollCounter);
@@ -52,6 +59,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         event.preventDefault();
     }, false);
 
+    document.querySelector('.menu-icon').addEventListener('click', function(event) {
+
+        var menuState = document.querySelector('#nav_list').style.display;
+        event.stopPropagation();
+        if (menuState === 'none') {
+            document.querySelector('#nav_list').style.display = 'block';
+        }else {
+            document.querySelector('#nav_list').style.display = 'none';
+        }
+        
+    }, false);
     
     // Gather position top for all link pages.
     pages = document.getElementsByClassName('pages');
@@ -86,5 +104,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         // Add 'active' class to newly active link.
         document.querySelector("[href=\'#" + scrollLinkMap[targetLinkPos] + "\']").parentNode.classList.add("active");
+
+        document.querySelector('.active-link').innerHTML = document.querySelector("[href=\'#" + scrollLinkMap[targetLinkPos] + "\']").innerHTML;
     });    
 });
