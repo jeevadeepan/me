@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,59 +10,80 @@
     <meta name="author" content="Jeevadeepan">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Patrick+Hand' rel='stylesheet' type='text/css'>
-    <link rel="icon" href="/favicon.ico?v=1.1" type="image/x-icon"/>
+    <link rel="icon" href="/favicon.ico?v=1.1" type="image/x-icon" />
     <link rel='stylesheet' href='css/reset.css'>
     <link rel='stylesheet' href='css/myprofile.css'>
     <script type="text/javascript" src="js/myprofile.js"></script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
- </head>
+    <script>
+        window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        
+        t._e = [];
+        t.ready = function(f) {
+            t._e.push(f);
+        };
+        
+        return t;
+        }(document, "script", "twitter-wjs"));
+    </script>
+</head>
+
 <body>
-<header>
-    <h1>
+    <header>
+        <h1>
         <a href="/" title="Jeevadeepan">Jeevadeepan</a>
     </h1>
-    <nav>
-        <div class="active-link mobile-menu">About Me</div>
-        <ul id="nav_list" class="cf">
-            <li class="active"><a href="#about">About Me</a></li>
-            <li><a href="#skills">My Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-        <span class="menu-icon mobile-menu">
+        <nav>
+            <div class="active-link mobile-menu">About Me</div>
+            <ul id="nav_list" class="cf">
+                <li class="active"><a href="#about">About Me</a></li>
+                <li><a href="#skills">My Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+            <span class="menu-icon mobile-menu">
             <span class="top"></span>
             <span class="middle"></span>
             <span class="bottom"></span>
-        </span>
-    </nav>
-</header>
-<section class="body_container">
-    <!-- About Page -->
+            </span>
+        </nav>
+    </header>
+    <section class="body_container">
+        <!-- About Page -->
         <div id="about" class="pages front">
             <div class="filler"></div>
             <aside id="profile_pic"></aside>
             <section>
-                "Hi there! I'm a front end web developer from Bangalore, India. I develop cool web pages and I specialise
-                in front end web technologies Javascript, HTML, CSS and jQuery."
+                "Hi there! I'm a front end web developer. I develop web pages and specialise in front end web technologies Javascript, HTML,
+                CSS, AngularJS and jQuery."
             </section>
         </div>
 
-    <!-- Skills Page -->        
+        <!-- Skills Page -->
         <div id="skills" class="pages back">
             <div class="filler"></div>
             <ul id="tech-list">
-                <li><span>Programming Languages</span> - Javascript, Java</li>
-                <li><span>Javascript Libraries and Frameworks</span> - jQuery, angularjs, backbonejs, nodejs, twitter bootstrap, jQuery UI, jQuery Mobile</li>
+                <li><span>Programming Languages</span> - Javascript</li>
+                <li><span>Javascript Libraries and Frameworks</span> - jQuery, angularjs, ExtJS, twitter bootstrap, jQuery UI,
+                    jQuery Mobile, Jasmine, grunt</li>
                 <li><span>Other Web Technoloiges</span> - HTML, CSS</li>
                 <li><span>Version Control</span> - git, TFS, svn</li>
-                <li><span>IDE</span> - sublime text, Webstorm</li>
             </ul>
             <section id="skill-section" class="cf">
                 <h3>What I do?</h3>
                 <ul id="skill-list">
-                    <li>Develop feature rich User Interface for Web applications using javascript, HTML, CSS and other related technologies</li>
+                    <li>Develop feature rich User Interface for Web applications using javascript, HTML, CSS and other related
+                        technologies
+                    </li>
                     <li>Develop performance optimized applications with strong understanding of Object oriented javascript</li>
-                    <li>Develop Single page applications using javascript MV* frameworks angularjs, backbonejs and emberjs</li>
+                    <li>Develop Single page applications using angularJS</li>
+                    <li>Write modular and reusable javascript using typescript, RequireJS</li>
                     <li>Streamline client oriented (javascript) applications using 'workflow' tools yeoman, grunt and bower</li>
                     <li>Write cleaner javascript that is 'jslint'ed</li>
                     <li>Write cleaner, readable and reusable CSS using LESS/SASS</li>
@@ -70,10 +92,10 @@
             </section>
         </div>
 
-    <!-- Projects Page -->        
+        <!-- Projects Page -->
         <div id="projects" class="pages top">
             <div class="filler"></div>
-            <table>
+            <table id="projects-grid">
                 <thead>
                     <tr>
                         <th>Project Name</th>
@@ -85,62 +107,221 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>EQUITY ENTITLEMENTS TOOL</td>
+                        <td>Equity entitlements tool enables traders to request access to different applications used within
+                            the group. Traders can request for different roles to access applications. The tool also has
+                            an admin module that lets the higher level managers to create roles which can be then requested
+                            by traders</td>
+                        <td>AngularJS, Typescript, RequireJS, Bootstrap, Jasmine, Grunt</td>
+                        <td>Developed most of the UI components for the tool. Developed modular and reusable components using
+                            AngularJS and typescript. Developed a core library of AngularJS components (as directives) that
+                            could be plugged in and reused in any other angular application. We used web component based
+                            approach where each directive behaves as a component with a controller attached to it handling
+                            the behavior. Each screen was developed as a separate angular module that made the code organized
+                            and readable. Used requireJS to load modules asynchronously removing the need of maintaining
+                            the .js source files in base.html page. Modular approach made the code easily testable using
+                            jasmine
+                        </td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>FID COVERAGE</td>
+                        <td>FID COVERAGE is a tool for Fixed Income Sales traders to manage ‘Coverage’ for different clients.
+                            The tool allows sales traders to request new coverage, Edit existing coverage and View historical
+                            coverage. Additionally it entitles managers to Approve requested coverage</td>
+                        <td>Core javascript, Extjs, Deftjs, HTML, CSS, jasmine</td>
+                        <td>Developed all of the FID Coverage UI components from scratch and lead Front end team. Developed extensively
+                            reusable components using Extjs/Deftjs combo. FID Coverage UI was rapidly developed from scratch
+                            in a period of 6 months. Care was taken to write testable javascript code and used jasmine for
+                            js unit testing</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
+                        <td>AMT (Account Management Tool)</td>
+                        <td>AMT (Account management tool) is a client accounts management tool that allows traders to track and
+                            maintain client related information</td>
+                        <td>Javascript(Extjs), HTML, CSS</td>
+                        <td>Involved in developing UI features for AMT tool using Extjs</td>
+                        <td>NA</td>
+                    </tr>
+                    <tr>
                         <td>Big Machines</td>
-                        <td>Bigmachine’s B2B ecommerce engine includes modules for online product catalogs, guided selling, product configuration, shopping cart, order management, reporting, interface personalization, web lead capture and ecommerce suite integration</td>
+                        <td>Bigmachine’s B2B ecommerce engine includes modules for online product catalogs, guided selling, product
+                            configuration, shopping cart, order management, reporting, interface personalization, web lead
+                            capture and ecommerce suite integration</td>
                         <td>Core javascript, jQuery, jQueryUI, jQuery mobile, backbonejs, css, HTML</td>
-                        <td>Involved in developing mobile configurator pages and many other UI enhancements in different modules of B2B engine</td>
+                        <td>Involved in developing mobile configurator pages and many other UI enhancements in different modules
+                            of B2B engine</td>
                         <td>NA</td>
                     </tr>
                     <tr>
                         <td>Socialbyway</td>
-                        <td>Socialbyway is a javascript library that simplifies the implementation of
-multiple social platforms(like facebook, twitter, linkedIn, etc) in to a website</td>
+                        <td>Socialbyway is a javascript library that simplifies the implementation of multiple social platforms(like
+                            facebook, twitter, linkedIn, etc) in to a website</td>
                         <td>Core javascript, jQuery, jQueryUI, css, HTML, REST</td>
                         <td>Implemented picasa api for socialbyway library. Developed UI components for socialbyway site</td>
                         <td><a href="www.socialbyway.com">www.socialbyway.com</a></td>
                     </tr>
                     <tr>
                         <td>AWB - Gallagher</td>
-                        <td>Develop UI components and functionality for Gallagher's BI tool 
-AWB(Analytic Work Bench)</td>
+                        <td>Develop UI components and functionality for Gallagher's BI tool AWB(Analytic Work Bench)</td>
                         <td>Core javascript, jQuery, jQueryUI, css, HTML</td>
-                        <td>Developed UI components for AWB's search functionality that allows customers 
-to search for claims</td>
+                        <td>Developed UI components for AWB's search functionality that allows customers to search for claims</td>
                         <td>NA</td>
                     </tr>
                     <tr>
                         <td>Matisse</td>
-                        <td>A white board application with real-time canvas sharing and chatting.
-Users can collaborate on the design ideas real time and create the UI for the applications which can be then published as an image. The product is built with HTML5 technologies which include canvas, web storage, transitions and transformations</td>
+                        <td>A white board application with real-time canvas sharing and chatting. Users can collaborate on the
+                            design ideas real time and create the UI for the applications which can be then published as
+                            an image. The product is built with HTML5 technologies which include canvas, web storage, transitions
+                            and transformations</td>
                         <td>Core javascript, jQuery, jQueryUI, css3, html5, fabric.js, node.js
-</td>
+                        </td>
                         <td>User Interface Development</td>
-                        <td><a href="www.thematisse.org">www.thematisse.org</a></td>
+                        <td>NA</td>
                     </tr>
                     <tr>
                         <td>THUNDERCAT / NOCE UI</td>
-                        <td>The aim of the project is to design and develop UI components and functionality for the shop and ordering section of the E-commerce web portal www.centurylink.com</td>
+                        <td>The aim of the project is to design and develop UI components and functionality for the shop and
+                            ordering section of the E-commerce web portal www.centurylink.com</td>
                         <td>XHTML, CSS, JavaScript, jQuery, Ajax, Velocity Module(VM)
-</td>
+                        </td>
                         <td>User Interface Developer for the Centurylink E-commerce portal</td>
                         <td><a href="www.centurylink.com">www.centurylink.com</a></td>
                     </tr>
                 </tbody>
             </table>
+            <div id="projects-compact">
+                <section>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>EQUITY ENTITLEMENTS TOOL</dd>
+                        <dt>Description</dt>
+                        <dd>Equity entitlements tool enables traders to request access to different applications used within
+                            the group. Traders can request for different roles to access applications. The tool also has
+                            an admin module that lets the higher level managers to create roles which can be then requested
+                            by traders</dd>
+                        <dt>Technologies used</dt>
+                        <dd>AngularJS, Typescript, RequireJS, Bootstrap, Jasmine, Grunt</dd>
+                        <dt>Role</dt>
+                        <dd>Developed most of the UI components for the tool. Developed modular and reusable components using
+                            AngularJS and typescript. Developed a core library of AngularJS components (as directives) that
+                            could be plugged in and reused in any other angular application. We used web component based
+                            approach where each directive behaves as a component with a controller attached to it handling
+                            the behavior. Each screen was developed as a separate angular module that made the code organized
+                            and readable. Used requireJS to load modules asynchronously removing the need of maintaining
+                            the .js source files in base.html page. Modular approach made the code easily testable using
+                            jasmine
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>FID COVERAGE</dd>
+                        <dt>Description</dt>
+                        <dd>FID COVERAGE is a tool for Fixed Income Sales traders to manage ‘Coverage’ for different clients.
+                            The tool allows sales traders to request new coverage, Edit existing coverage and View historical
+                            coverage. Additionally it entitles managers to Approve requested coverage</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Core javascript, Extjs, Deftjs, HTML, CSS, jasmine</dd>
+                        <dt>Role</dt>
+                        <dd>Developed all of the FID Coverage UI components from scratch and lead Front end team. Developed extensively
+                            reusable components using Extjs/Deftjs combo. FID Coverage UI was rapidly developed from scratch
+                            in a period of 6 months. Care was taken to write testable javascript code and used jasmine for
+                            js unit testing
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>AMT (Account Management Tool)</dd>
+                        <dt>Description</dt>
+                        <dd>AMT (Account management tool) is a client accounts management tool that allows traders to track and
+                            maintain client related information</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Javascript(Extjs), HTML, CSS</dd>
+                        <dt>Role</dt>
+                        <dd>Involved in developing UI features for AMT tool using Extjs
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>Big Machines</dd>
+                        <dt>Description</dt>
+                        <dd>Bigmachine’s B2B ecommerce engine includes modules for online product catalogs, guided selling, product
+                            configuration, shopping cart, order management, reporting, interface personalization, web lead
+                            capture and ecommerce suite integration</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Core javascript, jQuery, jQueryUI, jQuery mobile, backbonejs, css, HTML</dd>
+                        <dt>Role</dt>
+                        <dd>Involved in developing mobile configurator pages and many other UI enhancements in different modules
+                            of B2B engine
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>Socialbyway</dd>
+                        <dt>Description</dt>
+                        <dd>Socialbyway is a javascript library that simplifies the implementation of multiple social platforms(like
+                            facebook, twitter, linkedIn, etc) in to a website</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Core javascript, jQuery, jQueryUI, css, HTML, REST</dd>
+                        <dt>Role</dt>
+                        <dd>Implemented picasa api for socialbyway library. Developed UI components for socialbyway site
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>AWB - Gallagher</dd>
+                        <dt>Description</dt>
+                        <dd>Develop UI components and functionality for Gallagher's BI tool AWB(Analytic Work Bench)</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Core javascript, jQuery, jQueryUI, css, HTML</dd>
+                        <dt>Role</dt>
+                        <dd>Developed UI components for AWB's search functionality that allows customers to search for claims
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>Matisse</dd>
+                        <dt>Description</dt>
+                        <dd>A white board application with real-time canvas sharing and chatting. Users can collaborate on the
+                            design ideas real time and create the UI for the applications which can be then published as
+                            an image. The product is built with HTML5 technologies which include canvas, web storage, transitions
+                            and transformations</dd>
+                        <dt>Technologies used</dt>
+                        <dd>Core javascript, jQuery, jQueryUI, css3, html5, fabric.js, node.js</dd>
+                        <dt>Role</dt>
+                        <dd>User Interface Development
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Project</dt>
+                        <dd>THUNDERCAT / NOCE UI</dd>
+                        <dt>Description</dt>
+                        <dd>The aim of the project is to design and develop UI components and functionality for the shop and
+                            ordering section of the E-commerce web portal www.centurylink.com</dd>
+                        <dt>Technologies used</dt>
+                        <dd>XHTML, CSS, JavaScript, jQuery, Ajax, Velocity Module(VM)</dd>
+                        <dt>Role</dt>
+                        <dd>User Interface Developer for the Centurylink E-commerce portal
+                        </dd>
+                    </dl>
+                </section>
+            </div>
         </div>
 
-    <!-- Contact Page -->        
+        <!-- Contact Page -->
         <div id="contact" class="pages bottom">
             <div class="filler"></div>
             <ul>
                 <li>E-mail me : <a href="mailto:jeevacse89@gmail.com">jeevacse89@gmail.com</a></li>
                 <li>Checkout my LinkedIn profile : <a href="http://www.linkedin.com/pub/jeevadeepan-a/48/5ba/210">Here</a></li>
                 <li>Checkout my Git : <a href="https://github.com/jeevadeepan">https://github.com/jeevadeepan</a></li>
-                <li>Follow me on Twitter : <a href="https://twitter.com/jeevadeepan" class="twitter-follow-button" data-show-count="false" data-lang="en">jeevadeepan</a></li>
+                <li>Follow me on Twitter : <a href="https://twitter.com/jeevadeepan" class="twitter-follow-button" data-show-count="false"
+                    data-lang="en">jeevadeepan</a></li>
             </ul>
         </div>
-</section>
-<footer>Copyright &copy; Jeevadeepan, 2013</footer>
+    </section>
+    <footer>Copyright &copy; Jeevadeepan, <span id="currentYear"></span></footer>
 </body>
-</html>
 
+</html>

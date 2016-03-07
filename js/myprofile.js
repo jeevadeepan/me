@@ -1,10 +1,13 @@
 //myprofile.js - Javascript for the profile site goes here.
 
 // DOM ready
-document.addEventListener("DOMContentLoaded", function(event) {
-    var linkTargetPtsArr = [], pages, i, 
+document.addEventListener("DOMContentLoaded", function (event) {
+    var linkTargetPtsArr = [], pages, i,
         fillerHeight = document.getElementsByClassName("filler")[0].offsetHeight,
         scrollLinkMap = {}, linkTargetPos;
+    
+    // Populate copyright year
+    document.getElementById('currentYear').innerHTML = (new Date().getFullYear()).toString();
     
     // Add event listener to navigation link clicks - Prevent default action for smooth scrolling.
     document.getElementsByTagName("nav")[0].addEventListener('click', function (event) {
@@ -12,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             scrollCounter, scrollTopTo, scrollTimer, step;
 
         // Exit, if the clicked elemnt is not Anchor.
-        if(targetLink.nodeName !== 'A') {
-          return;
+        if (targetLink.nodeName !== 'A') {
+            return;
         }
 
         // Add Link to window history, to preserve browser history upon back/forward navigation.
@@ -33,25 +36,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
         scrollCounter = window.scrollY;
 
         // Handle scroll down
-        if(scrollCounter < scrollTopTo) {
-            step = (scrollTopTo - scrollCounter)/20 ;
+        if (scrollCounter < scrollTopTo) {
+            step = (scrollTopTo - scrollCounter) / 20;
             scrollTimer = window.setInterval(function () {
                 scrollCounter += step;
                 window.scrollTo(0, scrollCounter);
 
-                if(scrollCounter >= scrollTopTo) {
+                if (scrollCounter >= scrollTopTo) {
                     window.clearInterval(scrollTimer);
-                }    
+                }
             }, 1)
         } else { //Handle scroll up
-            step = (scrollCounter - scrollTopTo)/20 ;
+            step = (scrollCounter - scrollTopTo) / 20;
             scrollTimer = window.setInterval(function () {
                 scrollCounter -= step;
                 window.scrollTo(0, scrollCounter);
 
-                if(scrollCounter <= scrollTopTo) {
+                if (scrollCounter <= scrollTopTo) {
                     window.clearInterval(scrollTimer);
-                }    
+                }
             }, 1)
         }
 
@@ -59,22 +62,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
         event.preventDefault();
     }, false);
 
-    document.querySelector('.menu-icon').addEventListener('click', function(event) {
+    document.querySelector('.menu-icon').addEventListener('click', function (event) {
 
         var menuState = document.querySelector('#nav_list').style.display;
         event.stopPropagation();
         if (menuState === 'none') {
             document.querySelector('#nav_list').style.display = 'block';
-        }else {
+        } else {
             document.querySelector('#nav_list').style.display = 'none';
         }
-        
+
     }, false);
     
     // Gather position top for all link pages.
     pages = document.getElementsByClassName('pages');
 
-    for (i=0; i<pages.length; i++) {
+    for (i = 0; i < pages.length; i++) {
         linkTargetPos = pages[i].offsetTop - fillerHeight;
         linkTargetPtsArr.push(linkTargetPos);
 
@@ -83,14 +86,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     // Add listener to document scroll event to update active navigation link on scroll.
-    document.addEventListener('scroll', function(event) {
+    document.addEventListener('scroll', function (event) {
         var scrollY = window.scrollY, targetLinkPos,
             linkTargetPtsArrLength = linkTargetPtsArr.length;
 
         // Determine active link position.
-        for(i=0; i<linkTargetPtsArrLength; i++) {
-            if(linkTargetPtsArr[i+1]) {
-                if((scrollY >= linkTargetPtsArr[i]) && (scrollY < linkTargetPtsArr[i+1])) {
+        for (i = 0; i < linkTargetPtsArrLength; i++) {
+            if (linkTargetPtsArr[i + 1]) {
+                if ((scrollY >= linkTargetPtsArr[i]) && (scrollY < linkTargetPtsArr[i + 1])) {
                     targetLinkPos = linkTargetPtsArr[i];
                     break;
                 }
@@ -106,5 +109,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.querySelector("[href=\'#" + scrollLinkMap[targetLinkPos] + "\']").parentNode.classList.add("active");
 
         document.querySelector('.active-link').innerHTML = document.querySelector("[href=\'#" + scrollLinkMap[targetLinkPos] + "\']").innerHTML;
-    });    
+    });
 });
+
+// Greetings
+console.log('**************************************');
+console.log('Hi there! You found me!!!');
+console.log('I have built this profile site as a static HTML page.');
+console.log('Built using pure vannila Javascript, HTML and CSS. No frameworks.');
+console.log('It\'s responsive too!');
+console.log('**************************************');

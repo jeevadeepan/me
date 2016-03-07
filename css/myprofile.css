@@ -176,9 +176,13 @@ footer {
     padding-top: 15px;
 }
 
+#projects-compact {
+    display: none;
+}
+
 /* Smaller screens */
 @media only screen 
-and (max-width : 480px) {
+and (max-width : 850px) {
 /* Styles */
 
     header {
@@ -253,5 +257,25 @@ and (max-width : 480px) {
         text-align: center;
         height: 3.5rem;
         line-height: 3.5rem;
+    }
+    
+    #projects-grid {
+        display: none;
+    }
+    
+    #projects-compact {
+        display: block;
+    }
+    
+    #projects-compact dl {
+        margin: 3rem 0;
+    }
+    
+    #projects-compact dt {
+        font-weight: bold;
+    }
+    
+    #projects-compact dd {
+        padding-left: 3rem;
     }
 }
